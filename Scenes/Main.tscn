@@ -1,0 +1,47 @@
+[gd_scene load_steps=17 format=3 uid="uid://b2y001lslyy10"]
+
+[ext_resource type="Script" uid="uid://bj2xwe06s3uji" path="res://Entities/HotelSections/SectionSystem.gd" id="1_r150o"]
+[ext_resource type="Resource" uid="uid://bmerfmwphiekn" path="res://Entities/HotelSections/Sections/SectionsLibrary.tres" id="2_grg3l"]
+[ext_resource type="PackedScene" uid="uid://bc8mpo0oenlrw" path="res://Entities/PC/player.tscn" id="3_rgh2o"]
+[ext_resource type="Resource" uid="uid://6lo2gfb1aq4w" path="res://Entities/HotelSections/Sections/StraightHallway/StraightHallwayResource.tres" id="3_v1gob"]
+[ext_resource type="Script" uid="uid://doet3ecx7ulja" path="res://Entities/Utility/GameDoor/GameResource.gd" id="5_grg3l"]
+[ext_resource type="PackedScene" uid="uid://dsnf40yjhaj62" path="res://Entities/Utility/ExitDebug.tscn" id="5_v1gob"]
+[ext_resource type="PackedScene" uid="uid://neep8el0e2q1" path="res://Entities/Utility/GameDoor/Plaques/UncleHenryPlaque.tscn" id="6_frkhe"]
+[ext_resource type="PackedScene" uid="uid://pj422pgbksqu" path="res://Entities/Utility/EntranceDebug.tscn" id="6_jw32o"]
+[ext_resource type="PackedScene" uid="uid://mjucf86v0l0p" path="res://Entities/Utility/GameDoor/Plaques/BloodLustersPlaque.tscn" id="7_1p5hy"]
+[ext_resource type="PackedScene" uid="uid://bbsk1yriguvfr" path="res://Entities/Utility/world_environment.tscn" id="7_jw32o"]
+[ext_resource type="PackedScene" uid="uid://dvrbaq11lpsfl" path="res://Entities/Utility/GameDoor/Plaques/FamilyComputerPlaque.tscn" id="8_h1m7h"]
+[ext_resource type="PackedScene" uid="uid://b4h7gkwchency" path="res://Entities/Utility/GameDoor/Plaques/TCiTCoTCPlaque.tscn" id="9_erwvk"]
+
+[sub_resource type="Resource" id="Resource_2w5on"]
+script = ExtResource("5_grg3l")
+plaqueScene = ExtResource("6_frkhe")
+metadata/_custom_type_script = "uid://doet3ecx7ulja"
+
+[sub_resource type="Resource" id="Resource_346fj"]
+script = ExtResource("5_grg3l")
+plaqueScene = ExtResource("7_1p5hy")
+metadata/_custom_type_script = "uid://doet3ecx7ulja"
+
+[sub_resource type="Resource" id="Resource_0sclb"]
+script = ExtResource("5_grg3l")
+plaqueScene = ExtResource("8_h1m7h")
+metadata/_custom_type_script = "uid://doet3ecx7ulja"
+
+[sub_resource type="Resource" id="Resource_sxkr1"]
+script = ExtResource("5_grg3l")
+plaqueScene = ExtResource("9_erwvk")
+metadata/_custom_type_script = "uid://doet3ecx7ulja"
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_r150o")
+section_library = ExtResource("2_grg3l")
+starting_room = ExtResource("3_v1gob")
+player_scene = ExtResource("3_rgh2o")
+min_cull_depth = 5
+games_library = Array[ExtResource("5_grg3l")]([SubResource("Resource_2w5on"), SubResource("Resource_346fj"), SubResource("Resource_0sclb"), SubResource("Resource_sxkr1")])
+exitDebugScene = ExtResource("5_v1gob")
+entranceDebugScene = ExtResource("6_jw32o")
+metadata/_custom_type_script = "uid://bj2xwe06s3uji"
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("7_jw32o")]

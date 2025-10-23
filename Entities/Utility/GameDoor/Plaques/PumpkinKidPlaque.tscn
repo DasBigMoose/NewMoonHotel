@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://w35e3bscj8id"]
+
+[ext_resource type="PackedScene" uid="uid://cowrm2b1jov3h" path="res://Entities/Utility/GameDoor/Plaques/BaseGamePlaque.tscn" id="1_7eh2g"]
+
+[node name="PumpkinKidGamePlaque" instance=ExtResource("1_7eh2g")]
+
+[node name="Label" parent="." index="1"]
+text = "Pumpkin Kid's
+Great Heist"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SectionsLibrary" load_steps=8 format=3 uid="uid://bmerfmwphiekn"]
+
+[ext_resource type="Script" uid="uid://27e4asaatk21" path="res://Entities/HotelSections/SectionsLibrary.gd" id="1_usslk"]
+[ext_resource type="Script" uid="uid://fywdp5ir4qo8" path="res://Entities/HotelSections/SectionResource.gd" id="1_ya14x"]
+[ext_resource type="Resource" uid="uid://bi1ncns14ykom" path="res://Entities/HotelSections/Sections/CornerHallway/CornerHallwayResource.tres" id="2_py7be"]
+[ext_resource type="Resource" uid="uid://jqngjq7apvqa" path="res://Entities/HotelSections/Sections/TSection/TSection.tres" id="4_rb764"]
+[ext_resource type="Resource" uid="uid://c1y5k3w06b6sb" path="res://Entities/HotelSections/Sections/Junction/JunctionResource.tres" id="4_ya14x"]
+[ext_resource type="Resource" uid="uid://cqru3nqnsrr1f" path="res://Entities/HotelSections/Sections/StraightHallway/StraightHallwayResource.tres" id="5_py7be"]
+[ext_resource type="Resource" path="res://Entities/HotelSections/Sections/ColumnSection/ColumnSectionResource.tres" id="6_c63wm"]
+
+[resource]
+script = ExtResource("1_usslk")
+hotelSections = Array[ExtResource("1_ya14x")]([ExtResource("2_py7be"), ExtResource("5_py7be"), ExtResource("4_ya14x"), ExtResource("4_rb764"), ExtResource("6_c63wm")])
+metadata/_custom_type_script = "uid://27e4asaatk21"

@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnwc0cudme2hs"]
+
+[ext_resource type="PackedScene" uid="uid://bc8mpo0oenlrw" path="res://Entities/PC/player.tscn" id="1_8koso"]
+[ext_resource type="Script" uid="uid://d0lrea865houd" path="res://Entities/Utility/FlickerLight.gd" id="3_b5d6t"]
+[ext_resource type="MeshLibrary" uid="uid://ci8p3bbg1jvjl" path="res://Assets/BlockSet/BlockSetMeshLibrary.tres" id="3_pr2ys"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pr2ys"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+energy_multiplier = 0.15
+
+[sub_resource type="Sky" id="Sky_pr2ys"]
+sky_material = SubResource("ProceduralSkyMaterial_pr2ys")
+
+[sub_resource type="Environment" id="Environment_xmg8h"]
+background_mode = 2
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_pr2ys")
+tonemap_mode = 2
+
+[node name="Debug" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xmg8h")
+
+[node name="Player" parent="." instance=ExtResource("1_8koso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 10)
+travel_distance = 2
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.64639, 0)
+light_color = Color(0.748043, 0.723642, 0.610672, 1)
+light_energy = 1.20286
+spot_angle = 38.15
+script = ExtResource("3_b5d6t")
+energy_flicker_frequency = 0.15
+energy_flicker_variance = 0.0
+energy_flicker_magnitude = 0.25
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.64639, -9.82938)
+light_color = Color(0.748043, 0.723642, 0.610672, 1)
+light_energy = 1.75548
+spot_attenuation = 1.53
+spot_angle = 49.33
+script = ExtResource("3_b5d6t")
+energy_flicker_enabled = true
+energy_flicker_frequency = 0.1
+energy_flicker_variance = 0.05
+energy_flicker_magnitude = 0.25
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.64639, 10)
+
+[node name="FloorOne" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh_library = ExtResource("3_pr2ys")
+cell_size = Vector3(2, 2.5, 2)
+data = {
+"cells": PackedInt32Array(0, 65531, 2, 0, 65530, 2, 0, 65529, 2, 65535, 65531, 1, 65535, 65530, 1, 65534, 65530, 1, 65533, 65530, 1, 65532, 65530, 1, 65534, 65531, 2, 65533, 65531, 2, 65532, 65531, 2, 65535, 65529, 2, 65534, 65529, 2, 65533, 65529, 2, 65532, 65529, 2, 65531, 65529, 2, 65531, 65530, 2, 65531, 65531, 2, 65534, 1, 0, 65534, 2, 2, 65534, 3, 2, 65534, 4, 0, 65534, 5, 2, 65535, 1, 1, 65535, 2, 1, 65535, 3, 1, 65535, 4, 1, 65535, 5, 2, 0, 1, 655360, 0, 2, 655362, 0, 3, 2, 0, 4, 655360, 0, 5, 2, 65534, 0, 2, 65534, 65535, 0, 65534, 65534, 2, 65534, 65533, 2, 65534, 65532, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 655360, 0, 0, 2, 65535, 0, 1, 65535, 65535, 1, 65535, 65534, 1, 65535, 65533, 1, 65535, 65532, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Ceiling" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh_library = ExtResource("3_pr2ys")
+cell_size = Vector3(2, 2.5, 2)
+data = {
+"cells": PackedInt32Array(131071, 4, 655360, 131071, 3, 655360, 131071, 2, 655360, 131071, 1, 655360, 131071, 0, 655360, 131071, 65535, 655360, 65536, 4, 655360, 131070, 4, 655360, 131070, 3, 655360, 131070, 2, 655360, 131070, 1, 655360, 131070, 0, 655360, 131070, 65535, 655360, 131070, 65534, 655360, 131071, 65534, 655360, 65536, 65534, 655360, 65536, 65535, 655360, 65536, 0, 655360, 65536, 1, 655360, 65536, 2, 655360, 65536, 3, 655360, 131071, 65533, 655360, 131071, 65532, 655360, 131071, 65531, 655360, 131071, 65530, 655360, 131070, 65530, 655360, 131069, 65530, 655360, 131068, 65530, 655360, 131067, 65530, 655360, 131067, 65529, 655360, 131068, 65529, 655360, 131069, 65529, 655360, 65536, 65530, 655360, 65536, 65531, 655360, 65536, 65532, 655360, 65536, 65533, 655360, 131070, 65533, 655360, 131070, 65532, 655360, 131070, 65531, 655360, 131069, 65531, 655360, 131068, 65531, 655360, 131067, 65531, 655360)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)

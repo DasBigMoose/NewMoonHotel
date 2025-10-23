@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://neep8el0e2q1"]
+
+[ext_resource type="PackedScene" uid="uid://cowrm2b1jov3h" path="res://Entities/Utility/GameDoor/Plaques/BaseGamePlaque.tscn" id="1_7rw73"]
+
+[node name="UncleHenryGamePlaque" instance=ExtResource("1_7rw73")]
+
+[node name="Label" parent="." index="1"]
+text = "Uncle Henry 
+Isn't Home"

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwt55koruaegu"]
+
+[ext_resource type="PackedScene" uid="uid://bpoaiphmyewqg" path="res://Assets/Props/Sconce.blend" id="1_2apeo"]
+
+[node name="Sconce" type="OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.878431, 1)
+light_energy = 0.15
+light_size = 1.26
+omni_range = 1.5
+
+[node name="Model" parent="." instance=ExtResource("1_2apeo")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

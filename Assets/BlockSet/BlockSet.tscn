@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3ppg0t38wsk3"]
+
+[ext_resource type="PackedScene" uid="uid://gsdk2estjmtq" path="res://Assets/BlockSet/BlockSet.blend" id="1_q3ppa"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q3ppa"]
+points = PackedVector3Array(0.948959, 1.5, 0.988156, -1, -0.994696, -1, 0.984127, -0.994696, -1, 0.988354, -1, 0.988354, 0.984127, 1.49494, -1, -1, 1.4947, 0.984127, -1, -0.994696, 0.984127, -1, 1.4947, -1, 0.988156, 1.5, 0.988156)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u7mam"]
+points = PackedVector3Array(0.988424, 1.5, 0.988424, -1, -0.994454, -1, 0.984127, -0.994454, -1, 0.988548, -1, 0.988548, -1, -0.994454, 0.984127, -1, 1.49461, -1, 0.984127, 1.49461, -1, -1, 1.49461, 0.984127)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q3ppa"]
+data = PackedVector3Array(0, 1.5, 1, 1.1, 1.5, 1.1, 1, 1.5, 1, 1, 1.5, 0, 1, 1.5, 1, 1.1, 1.5, 1.1, 0, 1.5, 1, 0, 1.5, 1.1, 1.1, 1.5, 1.1, 0, 1.5, 1, -1, 1.5, 1.1, 0, 1.5, 1.1, 0, 1.5, 1, -1, 1.5, 1, -1, 1.5, 1.1, 1, 1.5, 0, 1.1, 1.5, 1.1, 1.1, 1.5, 0, 1, 1.5, 0, 1.1, 1.5, 0, 1.1, 1.5, -1, 1, 1.5, 0, 1.1, 1.5, -1, 1, 1.5, -1, 0, 1.5, 1.1, 1.1, 1.4, 1.1, 1.1, 1.5, 1.1, 0, 1.5, 1.1, 0, 1.4, 1.1, 1.1, 1.4, 1.1, 0, 1.5, 1.1, -1, 1.4, 1.1, 0, 1.4, 1.1, 0, 1.5, 1.1, -1, 1.5, 1.1, -1, 1.4, 1.1, 0, 1.3105, 1, 1.0477, 1.3105, 1.0477, 0, 1.3105, 1.0477, 0, 1.3105, 1, 0, 1.3105, 1.0477, -1, 1.3105, 1.0477, 0, 1.3105, 1, -1, 1.3105, 1.0477, -1, 1.3105, 1, 0, 1.3105, 1, 1, 1.3105, 1, 1.0477, 1.3105, 1.0477, 1, 1.3105, 0, 1.0477, 1.3105, 1.0477, 1, 1.3105, 1, 1, 1.3105, 0, 1.0477, 1.3105, 0, 1.0477, 1.3105, 1.0477, 1, 1.3105, 0, 1.0477, 1.3105, -1, 1.0477, 1.3105, 0, 1, 1.3105, 0, 1, 1.3105, -1, 1.0477, 1.3105, -1, 0, 1.4, 1.1, 1.0477, 1.3105, 1.0477, 1.1, 1.4, 1.1, 0, 1.4, 1.1, 0, 1.3105, 1.0477, 1.0477, 1.3105, 1.0477, 0, 1.4, 1.1, -1, 1.3105, 1.0477, 0, 1.3105, 1.0477, 0, 1.4, 1.1, -1, 1.4, 1.1, -1, 1.3105, 1.0477, 1.1, 1.5, 0, 1.1, 1.4, -1, 1.1, 1.5, -1, 1.1, 1.5, 0, 1.1, 1.4, 0, 1.1, 1.4, -1, 1.1, 1.5, 0, 1.1, 1.4, 1.1, 1.1, 1.4, 0, 1.1, 1.5, 0, 1.1, 1.5, 1.1, 1.1, 1.4, 1.1, 1.1, 1.4, 0, 1.0477, 1.3105, -1, 1.1, 1.4, -1, 1.1, 1.4, 0, 1.0477, 1.3105, 0, 1.0477, 1.3105, -1, 1.1, 1.4, 0, 1.0477, 1.3105, 1.0477, 1.0477, 1.3105, 0, 1.1, 1.4, 0, 1.1, 1.4, 1.1, 1.0477, 1.3105, 1.0477, 1, -1, 1, -1, 1.5, 1, 1, 1.5, 1, 1, -1, 1, -1, -1, 1, -1, 1.5, 1, 1, -1, -1, 1, 1.5, 1, 1, 1.5, -1, 1, -1, -0.6, 1, 1.5, 1, 1, -1, -1, 1, 1.5, 1, 1, -1, -0.6, 1, -1, -0.2, 1, 1.5, 1, 1, -1, -0.2, 1, -1, 0.2, 1, 1.5, 1, 1, -1, 0.2, 1, -1, 0.6, 1, 1.5, 1, 1, -1, 0.6, 1, -1, 1)
+
+[node name="BlockSet" instance=ExtResource("1_q3ppa")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorBlock" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorBlock/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_q3ppa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallBlock" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallBlock/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_u7mam")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CornerBlock" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CornerBlock/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_q3ppa")

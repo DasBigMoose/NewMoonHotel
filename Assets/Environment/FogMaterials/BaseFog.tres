@@ -1,0 +1,5 @@
+[gd_resource type="FogMaterial" format=3 uid="uid://bsketes73l325"]
+
+[resource]
+density = 0.1
+albedo = Color(0.20871, 0.20871, 0.20871, 1)

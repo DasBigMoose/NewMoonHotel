@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dmjhrjx6jcme4"]
+
+[ext_resource type="Texture2D" uid="uid://cp0175rd5ajy6" path="res://Assets/Debug/Wood_Panel/Wood_Panel_DIFF.png" id="1_vcn87"]
+[ext_resource type="Texture2D" uid="uid://u64e0gacvtwv" path="res://Assets/Debug/Wood_Panel/Wood_Panel_NRM.png" id="2_ftsk7"]
+
+[resource]
+resource_name = "Wall"
+albedo_texture = ExtResource("1_vcn87")
+normal_enabled = true
+normal_texture = ExtResource("2_ftsk7")

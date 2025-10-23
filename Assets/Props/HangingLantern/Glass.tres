@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://v5e1w6oq2j77"]
+
+[ext_resource type="Shader" uid="uid://dahjjjif78nn2" path="res://Assets/Props/HangingLantern/GlassShader.gdshader" id="1_2h48d"]
+[ext_resource type="FastNoiseLite" uid="uid://be6ro6v2oc4ix" path="res://Assets/Props/HangingLantern/GlassNoise.tres" id="2_qgibt"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qgibt"]
+frequency = 0.4407
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_872st"]
+noise = SubResource("FastNoiseLite_qgibt")
+
+[sub_resource type="Gradient" id="Gradient_qgibt"]
+offsets = PackedFloat32Array(0.471673, 0.565217, 1)
+colors = PackedColorArray(0.0977662, 0.0927955, 0.00585004, 1, 1, 1, 0.254902, 1, 1, 1, 0.254902, 1)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tgsk7"]
+width = 2048
+height = 2048
+noise = ExtResource("2_qgibt")
+color_ramp = SubResource("Gradient_qgibt")
+
+[resource]
+resource_name = "Glass"
+render_priority = 0
+shader = ExtResource("1_2h48d")
+shader_parameter/glass_normal = SubResource("NoiseTexture2D_872st")
+shader_parameter/distortion_size = 0.2
+shader_parameter/glass_color = Color(0.827709, 0.801679, 0.08486, 1)
+shader_parameter/glass_texture = SubResource("NoiseTexture2D_tgsk7")
+shader_parameter/emission_energy = 4.37

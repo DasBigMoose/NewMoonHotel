@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dpx0am4heclk5"]
+
+[ext_resource type="Shader" uid="uid://2dxpdl2twqrq" path="res://Assets/Props/HangingLantern/BrassShader.tres" id="1_74xbj"]
+
+[resource]
+resource_name = "Brass"
+render_priority = 0
+shader = ExtResource("1_74xbj")

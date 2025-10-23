@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SectionsLibrary" load_steps=5 format=3 uid="uid://cltqwhyx4x5gp"]
+
+[ext_resource type="Script" uid="uid://fywdp5ir4qo8" path="res://Entities/HotelSections/SectionResource.gd" id="1_nt7u4"]
+[ext_resource type="Resource" uid="uid://ii1j4hdf87v" path="res://Entities/HotelSections/Sections/ColumnSection/ColumnSectionResource.tres" id="2_c4rhq"]
+[ext_resource type="Resource" uid="uid://17qp57q4soa1" path="res://Entities/HotelSections/Sections/StraightHallway/StraightHallwayResource.tres" id="3_nx6vp"]
+[ext_resource type="Script" uid="uid://27e4asaatk21" path="res://Entities/HotelSections/SectionsLibrary.gd" id="5_p4aoe"]
+
+[resource]
+script = ExtResource("5_p4aoe")
+hotelSections = Array[ExtResource("1_nt7u4")]([ExtResource("2_c4rhq"), ExtResource("3_nx6vp")])
+metadata/_custom_type_script = "uid://27e4asaatk21"

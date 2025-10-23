@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://xma7uavvjqyd"]
+
+[ext_resource type="Texture2D" uid="uid://wujawespmvco" path="res://Assets/BlockSet/Textures/TinCeiling/TinCeiling.png" id="1_2s8k4"]
+
+[resource]
+resource_name = "Material.003"
+albedo_texture = ExtResource("1_2s8k4")
+metallic = 1.0
+roughness = 0.88
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("1_2s8k4")
+normal_texture = ExtResource("1_2s8k4")
+clearcoat = 0.1
+heightmap_enabled = true
+heightmap_texture = ExtResource("1_2s8k4")

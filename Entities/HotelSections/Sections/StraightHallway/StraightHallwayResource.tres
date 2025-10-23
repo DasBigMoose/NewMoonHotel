@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SectionResource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Entities/HotelSections/SectionResource.gd" id="1_8yb12"]
+[ext_resource type="PackedScene" path="res://Entities/HotelSections/Sections/StraightHallway/StraightHallway.tscn" id="2_env03"]
+
+[resource]
+script = ExtResource("1_8yb12")
+sectionScene = ExtResource("2_env03")
+ID = 3
+metadata/_custom_type_script = "uid://fywdp5ir4qo8"

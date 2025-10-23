@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://boknx037g7s38"]
+
+[ext_resource type="Texture2D" uid="uid://c2fblwi5slkbt" path="res://Assets/BlockSet/Textures/RedDoor/RedDoor.png" id="1_00t7k"]
+
+[resource]
+resource_name = "RedDoor"
+albedo_texture = ExtResource("1_00t7k")

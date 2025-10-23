@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://2wtydnd1u811"]
+
+[ext_resource type="PackedScene" uid="uid://cowrm2b1jov3h" path="res://Entities/Utility/GameDoor/Plaques/BaseGamePlaque.tscn" id="1_61m1s"]
+
+[node name="RunWolfGamePlaque" instance=ExtResource("1_61m1s")]
+
+[node name="Label" parent="." index="1"]
+text = "Run, Wolf"

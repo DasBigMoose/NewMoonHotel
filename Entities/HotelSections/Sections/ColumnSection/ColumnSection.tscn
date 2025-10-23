@@ -1,0 +1,136 @@
+[gd_scene load_steps=9 format=3 uid="uid://wpll2jddihm1"]
+
+[ext_resource type="PackedScene" uid="uid://dpyq7xnb8apaf" path="res://Entities/HotelSections/Sections/BaseHotelSection.tscn" id="1_lq05s"]
+[ext_resource type="Script" uid="uid://ftok8a2u4dvo" path="res://Entities/HotelSections/TransitionSpot.gd" id="2_ycc6u"]
+[ext_resource type="PackedScene" uid="uid://bgulsufjn006k" path="res://Entities/Utility/AutoLoadArea.tscn" id="3_ookug"]
+[ext_resource type="PackedScene" uid="uid://jq1konil7a32" path="res://Entities/Props/HangingLamp.tscn" id="4_ookug"]
+[ext_resource type="Material" uid="uid://bsketes73l325" path="res://Assets/Environment/FogMaterials/BaseFog.tres" id="5_0m6j3"]
+[ext_resource type="PackedScene" uid="uid://3k2b464tsom" path="res://Entities/Utility/GameDoor/GameDoor.tscn" id="6_seus3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycc6u"]
+size = Vector3(1.764, 3, 9.803)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ookug"]
+size = Vector3(2.01025, 3, 2)
+
+[node name="HotelSection" node_paths=PackedStringArray("transition_spots") instance=ExtResource("1_lq05s")]
+transition_spots = [NodePath("GridMap/PointA"), NodePath("GridMap/PointB"), NodePath("GridMap/PointC")]
+
+[node name="GridMap" parent="." index="1"]
+data = {
+"cells": PackedInt32Array(65535, 0, 1441796, 65535, 65535, 1441794, 65535, 65534, 655364, 1, 65534, 1048580, 1, 0, 4, 0, 65534, 655362, 1, 65535, 1048578, 0, 0, 2, 65535, 1, 1, 0, 1, 1, 1, 1, 1, 2, 1, 1, 2, 0, 1, 2, 65535, 1, 2, 65534, 1, 2, 65533, 1, 1, 65533, 1, 0, 65533, 1, 65535, 65533, 1, 65534, 65533, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 0, 1, 65534, 1, 1, 65535, 2, 1048580, 1, 2, 655364, 65534, 2, 655362, 65533, 1, 1048578, 65533, 0, 1048580, 65533, 65534, 4, 65533, 65533, 1048578, 2, 65532, 2, 3, 65533, 1441794, 3, 1, 1441794, 3, 0, 655364, 3, 65534, 1441796, 2, 2, 655362, 65533, 65535, 1, 3, 65535, 1, 0, 2, 1, 65534, 65532, 2, 65535, 65532, 2, 1, 65532, 2, 0, 65532, 1441792)
+}
+
+[node name="Ceiling" parent="GridMap" index="0"]
+data = {
+"cells": PackedInt32Array(65536, 1, 1048579, 131071, 1, 1048579, 131070, 1, 1048579, 131070, 0, 1048579, 131070, 65535, 1048579, 131070, 65534, 1048579, 131070, 65533, 1048579, 131071, 65533, 1048579, 65536, 65533, 1048579, 65537, 65533, 1048579, 65538, 65533, 1048579, 65538, 65534, 1048579, 65538, 65535, 1048579, 65538, 0, 1048579, 65538, 1, 1048579, 65537, 1, 1048579, 65539, 65535, 1048579, 65536, 65532, 1048579, 65536, 2, 1048579, 131069, 65535, 1048579)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="PointA" type="Node3D" parent="GridMap" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+script = ExtResource("2_ycc6u")
+entrance = true
+metadata/_custom_type_script = "uid://ftok8a2u4dvo"
+
+[node name="AutoLoadArea" parent="GridMap/PointA" index="0" instance=ExtResource("3_ookug")]
+
+[node name="PointB" type="Node3D" parent="GridMap" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
+script = ExtResource("2_ycc6u")
+exit_rotation = -1.5708
+metadata/_custom_type_script = "uid://ftok8a2u4dvo"
+
+[node name="AutoLoadArea" parent="GridMap/PointB" index="0" instance=ExtResource("3_ookug")]
+
+[node name="PointC" type="Node3D" parent="GridMap" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -1)
+script = ExtResource("2_ycc6u")
+exit_rotation = 1.5708
+metadata/_custom_type_script = "uid://ftok8a2u4dvo"
+
+[node name="AutoLoadArea" parent="GridMap/PointC" index="0" instance=ExtResource("3_ookug")]
+
+[node name="GridVolume" parent="GridMap" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/GridVolume" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99823, 0, -1.00977)
+shape = SubResource("BoxShape3D_ycc6u")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="GridMap/GridVolume" index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.00177, 0, -5.00977)
+shape = SubResource("BoxShape3D_ycc6u")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="GridMap/GridVolume" index="2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.00177, 0, 2.99023)
+shape = SubResource("BoxShape3D_ycc6u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GridMap/GridVolume" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00177, 0, -1.00977)
+shape = SubResource("BoxShape3D_ycc6u")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="GridMap/GridVolume" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.88698, 0, -1)
+shape = SubResource("BoxShape3D_ookug")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="GridMap/GridVolume" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88927, 0, -1)
+shape = SubResource("BoxShape3D_ookug")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="GridMap/GridVolume" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889273, 0, 4.85616)
+shape = SubResource("BoxShape3D_ookug")
+
+[node name="HangingLamp" parent="GridMap" index="6" instance=ExtResource("4_ookug")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 3, 3)
+
+[node name="HangingLamp2" parent="GridMap" index="7" instance=ExtResource("4_ookug")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3, 3, -1)
+
+[node name="HangingLamp3" parent="GridMap" index="8" instance=ExtResource("4_ookug")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5, 3, -1)
+
+[node name="HangingLamp4" parent="GridMap" index="9" instance=ExtResource("4_ookug")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 3, -5)
+
+[node name="FogVolume" type="FogVolume" parent="GridMap" index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00146, 1.97443, 3)
+size = Vector3(10, 3, 2)
+material = ExtResource("5_0m6j3")
+
+[node name="FogVolume2" type="FogVolume" parent="GridMap" index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00146, 1.97443, -5)
+size = Vector3(10, 3, 2)
+material = ExtResource("5_0m6j3")
+
+[node name="FogVolume3" type="FogVolume" parent="GridMap" index="12"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.99854, 1.97443, -1.1)
+size = Vector3(6, 3, 2)
+material = ExtResource("5_0m6j3")
+
+[node name="FogVolume4" type="FogVolume" parent="GridMap" index="13"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.00146, 1.97443, -1.1)
+size = Vector3(6, 3, 2)
+material = ExtResource("5_0m6j3")
+
+[node name="FogVolume5" type="FogVolume" parent="GridMap" index="14"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.97814, 1.97443, -0.997363)
+size = Vector3(2, 3, 2)
+material = ExtResource("5_0m6j3")
+
+[node name="FogVolume7" type="FogVolume" parent="GridMap" index="15"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.02186, 1.97443, -0.997363)
+size = Vector3(2, 3, 2)
+material = ExtResource("5_0m6j3")
+
+[node name="FogVolume8" type="FogVolume" parent="GridMap" index="16"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.97814, 1.97443, 5.00264)
+size = Vector3(2, 3, 2)
+material = ExtResource("5_0m6j3")
+
+[node name="GameDoors" type="Node3D" parent="GridMap" index="17"]
+unique_name_in_owner = true
+
+[node name="GameDoor" parent="GridMap/GameDoors" index="0" instance=ExtResource("6_seus3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, -6)

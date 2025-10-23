@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxt4nkces08cl"]
+
+[ext_resource type="Script" uid="uid://d0lrea865houd" path="res://Entities/Utility/FlickerLight.gd" id="1_3t0fr"]
+
+[node name="FlickerSpotLight" type="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_3t0fr")
+energy_flicker_enabled = true
+energy_flicker_frequency = 0.1
+energy_flicker_variance = 0.05
+energy_flicker_magnitude = 0.25

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cowrm2b1jov3h"]
+
+[ext_resource type="PackedScene" uid="uid://lgckcj76ulbx" path="res://Assets/Props/plaque.blend" id="1_4h6md"]
+[ext_resource type="FontFile" uid="uid://bn7qjp8l2ugqp" path="res://Assets/Fonts/Midnight Gelactic DEMO VERSION.ttf" id="2_f7t8b"]
+
+[node name="GamePlaque" type="Node3D"]
+
+[node name="Plaque" parent="." instance=ExtResource("1_4h6md")]
+
+[node name="Label" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.03103438, 0.013554573, 0)
+pixel_size = 0.001
+modulate = Color(0.9607843, 0.8235294, 0.20784314, 1)
+text = "Temp Label"
+font = ExtResource("2_f7t8b")
+font_size = 87
+outline_size = 32

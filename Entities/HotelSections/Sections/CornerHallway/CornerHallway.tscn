@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmk4fkn4j305e"]
+
+[ext_resource type="PackedScene" uid="uid://ddwv76c1gsidg" path="res://Entities/HotelSections/Sections/BaseGridMap.tscn" id="1_2k808"]
+[ext_resource type="Script" uid="uid://v7ehecjmcmc3" path="res://Entities/HotelSections/HotelSection.gd" id="1_b5e5a"]
+[ext_resource type="PackedScene" uid="uid://bgulsufjn006k" path="res://Entities/Utility/AutoLoadArea.tscn" id="4_f0f0m"]
+[ext_resource type="Script" uid="uid://ftok8a2u4dvo" path="res://Entities/HotelSections/TransitionSpot.gd" id="4_idxrk"]
+[ext_resource type="MeshLibrary" uid="uid://ci8p3bbg1jvjl" path="res://Assets/BlockSet/BlockSetMeshLibrary.tres" id="5_gmxe2"]
+[ext_resource type="PackedScene" uid="uid://jq1konil7a32" path="res://Entities/Props/HangingLamp.tscn" id="6_27y1f"]
+[ext_resource type="Script" uid="uid://d0lrea865houd" path="res://Entities/Utility/FlickerLight.gd" id="7_0tpm8"]
+[ext_resource type="Environment" uid="uid://dltng6c6ppt40" path="res://Entities/Utility/BaseEnvironment.tres" id="7_t5sk0"]
+[ext_resource type="Material" uid="uid://bsketes73l325" path="res://Assets/Environment/FogMaterials/BaseFog.tres" id="8_0tpm8"]
+[ext_resource type="PackedScene" uid="uid://3k2b464tsom" path="res://Entities/Utility/GameDoor/GameDoor.tscn" id="9_yln7v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nswk"]
+size = Vector3(2, 2, 8)
+
+[node name="CornerHallway" type="Node3D" node_paths=PackedStringArray("transition_spots", "gridArea")]
+script = ExtResource("1_b5e5a")
+transition_spots = [NodePath("GridMap/PointA"), NodePath("GridMap/PointB")]
+gridArea = NodePath("GridMap/Area3D")
+
+[node name="GridMap" parent="." instance=ExtResource("1_2k808")]
+data = {
+"cells": PackedInt32Array(65534, 0, 1048578, 0, 0, 1441794, 65534, 65535, 1048578, 65534, 65534, 1048578, 65535, 65533, 1441792, 0, 65533, 2, 1, 65533, 2, 2, 65533, 2, 0, 65535, 655364, 1, 65535, 655362, 2, 65535, 655362, 0, 1, 1441794, 0, 2, 1441794, 65534, 1, 1048578, 65534, 2, 1048578, 65535, 2, 1, 65535, 1, 1, 65535, 0, 1, 65535, 65535, 1, 65535, 65534, 1, 0, 65534, 1441793, 1, 65534, 1441793, 2, 65534, 1441793)
+}
+
+[node name="PointA" type="Node3D" parent="GridMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 6)
+script = ExtResource("4_idxrk")
+entrance = true
+metadata/_custom_type_script = "uid://ftok8a2u4dvo"
+
+[node name="AutoLoadArea" parent="GridMap/PointA" instance=ExtResource("4_f0f0m")]
+
+[node name="PointB" type="Node3D" parent="GridMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -3)
+script = ExtResource("4_idxrk")
+exit_rotation = -1.5708
+metadata/_custom_type_script = "uid://ftok8a2u4dvo"
+
+[node name="AutoLoadArea" parent="GridMap/PointB" instance=ExtResource("4_f0f0m")]
+
+[node name="Area3D" type="Area3D" parent="GridMap"]
+collision_layer = 8
+collision_mask = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 1)
+shape = SubResource("BoxShape3D_3nswk")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GridMap/Area3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 1.5, -3)
+shape = SubResource("BoxShape3D_3nswk")
+
+[node name="Ceiling" type="GridMap" parent="GridMap"]
+mesh_library = ExtResource("5_gmxe2")
+cell_size = Vector3(2, 3, 2)
+data = {
+"cells": PackedInt32Array(131071, 2, 3, 131071, 1, 3, 131071, 0, 3, 131071, 65535, 3, 131071, 65534, 3, 65536, 65534, 3, 65537, 65534, 3, 65538, 65534, 3)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="HangingLamp" parent="GridMap" instance=ExtResource("6_27y1f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 3.16502, -3)
+light_energy = 0.5305696
+script = ExtResource("7_0tpm8")
+energy_flicker_enabled = true
+energy_flicker_frequency = 0.01
+energy_flicker_magnitude = 0.05
+base_energy_level = 0.5
+
+[node name="HangingLamp2" parent="GridMap" instance=ExtResource("6_27y1f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 3.16502, 5)
+light_energy = 0.46202233
+script = ExtResource("7_0tpm8")
+energy_flicker_enabled = true
+energy_flicker_frequency = 0.01
+energy_flicker_magnitude = 0.05
+base_energy_level = 0.5
+
+[node name="FogVolume" type="FogVolume" parent="GridMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.02317, 0.5)
+size = Vector3(2, 3, 9)
+material = ExtResource("8_0tpm8")
+
+[node name="FogVolume2" type="FogVolume" parent="GridMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7777, 2.02317, -3)
+size = Vector3(5.54102, 3, 2)
+material = ExtResource("8_0tpm8")
+
+[node name="GameDoors" type="Node3D" parent="GridMap"]
+unique_name_in_owner = true
+
+[node name="GameDoor" parent="GridMap/GameDoors" instance=ExtResource("9_yln7v")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1, 0, -4)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("7_t5sk0")
+
+[connection signal="area_entered" from="GridMap/Area3D" to="." method="_on_section_entered"]

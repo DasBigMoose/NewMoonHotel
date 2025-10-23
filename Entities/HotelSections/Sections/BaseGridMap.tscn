@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddwv76c1gsidg"]
+
+[ext_resource type="MeshLibrary" uid="uid://ci8p3bbg1jvjl" path="res://Assets/BlockSet/BlockSetMeshLibrary.tres" id="1_qhrpo"]
+
+[node name="GridMap" type="GridMap"]
+mesh_library = ExtResource("1_qhrpo")
+cell_size = Vector3(2, 3, 2)
+metadata/_editor_floor_ = Vector3(0, 0, 0)

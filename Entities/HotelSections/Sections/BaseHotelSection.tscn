@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpyq7xnb8apaf"]
+
+[ext_resource type="Script" uid="uid://v7ehecjmcmc3" path="res://Entities/HotelSections/HotelSection.gd" id="1_syn38"]
+[ext_resource type="Environment" uid="uid://dltng6c6ppt40" path="res://Entities/Utility/BaseEnvironment.tres" id="2_ycgxa"]
+[ext_resource type="PackedScene" uid="uid://ddwv76c1gsidg" path="res://Entities/HotelSections/Sections/BaseGridMap.tscn" id="3_oyj0o"]
+
+[node name="HotelSection" type="Node3D" node_paths=PackedStringArray("spawnPosition", "gridArea")]
+script = ExtResource("1_syn38")
+spawnPosition = NodePath("GridMap/SpawnPosition")
+gridArea = NodePath("GridMap/GridVolume")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_ycgxa")
+
+[node name="GridMap" parent="." instance=ExtResource("3_oyj0o")]
+
+[node name="Ceiling" parent="GridMap" instance=ExtResource("3_oyj0o")]
+
+[node name="SpawnPosition" type="Node3D" parent="GridMap"]
+
+[node name="GridVolume" type="Area3D" parent="GridMap"]
+collision_layer = 8
+collision_mask = 10

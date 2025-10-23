@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://de0rqmflxt6nv"]
+
+[ext_resource type="Texture2D" uid="uid://b5nrmn5emdslc" path="res://Assets/Debug/CarpetTest/overlook.jpg" id="1_oinxt"]
+[ext_resource type="Texture2D" uid="uid://dw2k8bc2vb71j" path="res://Assets/Debug/CarpetTest/Carpet/Carpet_NRML.png" id="2_fu8ea"]
+
+[resource]
+resource_name = "Material.001"
+albedo_texture = ExtResource("1_oinxt")
+normal_enabled = true
+normal_texture = ExtResource("2_fu8ea")

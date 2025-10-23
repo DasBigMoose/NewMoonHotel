@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dedps70tntxkl"]
+
+[ext_resource type="PackedScene" uid="uid://bwt55koruaegu" path="res://Entities/Props/Sconce.tscn" id="1_k83mc"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sconce" parent="." instance=ExtResource("1_k83mc")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.822873, 2.308, 0)
+omni_range = 1.75
+
+[node name="Sconce2" parent="." instance=ExtResource("1_k83mc")]
+transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, -0.812026, 2.30825, 0)
+omni_range = 1.75

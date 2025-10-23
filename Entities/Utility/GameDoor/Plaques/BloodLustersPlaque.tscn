@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mjucf86v0l0p"]
+
+[ext_resource type="PackedScene" uid="uid://cowrm2b1jov3h" path="res://Entities/Utility/GameDoor/Plaques/BaseGamePlaque.tscn" id="1_lpcj1"]
+
+[node name="BloodLustersGamePlaque" instance=ExtResource("1_lpcj1")]
+
+[node name="Label" parent="." index="1"]
+text = "Bloodlusters"

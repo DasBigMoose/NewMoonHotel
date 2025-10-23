@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://3k2b464tsom"]
+
+[ext_resource type="Script" uid="uid://crncdmgfohpbx" path="res://Entities/Utility/GameDoor/GameDoor.gd" id="1_emw5e"]
+[ext_resource type="PackedScene" uid="uid://cowrm2b1jov3h" path="res://Entities/Utility/GameDoor/Plaques/BaseGamePlaque.tscn" id="2_if4ip"]
+[ext_resource type="AudioStream" uid="uid://b41fpw80v7vek" path="res://Assets/Sound/Effects/DoorOpening/DoorOpening.wav" id="3_if4ip"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3ykw"]
+size = Vector3(0.54003906, 1.9978027, 1.4570313)
+
+[node name="GameDoor" type="Area3D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_emw5e")
+
+[node name="DoorShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12191665, 1.7183784, 0)
+shape = SubResource("BoxShape3D_f3ykw")
+
+[node name="PlaquePosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.122, 1.065)
+
+[node name="GamePlaquePlaceHolder" parent="PlaquePosition" instance=ExtResource("2_if4ip")]
+
+[node name="DoorOpenSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9532002, 0)
+stream = ExtResource("3_if4ip")
+
+[connection signal="area_entered" from="." to="." method="_on_door_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_door_area_exited"]
+[connection signal="finished" from="DoorOpenSound" to="." method="_on_door_sound_finished"]

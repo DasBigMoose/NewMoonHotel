@@ -1,0 +1,36 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dmro1h5qbikef"
+path="res://.godot/imported/Midnight Gelactic Italic DEMO VERSION.ttf-e879868a18a36b558a08b36b43b85747.fontdata"
+
+[deps]
+
+source_file="res://Assets/Fonts/Midnight Gelactic Italic DEMO VERSION.ttf"
+dest_files=["res://.godot/imported/Midnight Gelactic Italic DEMO VERSION.ttf-e879868a18a36b558a08b36b43b85747.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
