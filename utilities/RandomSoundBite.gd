@@ -1,3 +1,5 @@
+# This splits up a single AudioStream into segments that can be played back at random.
+# The idea here was to not have to reload resources for things like random foot steps for the player.
 @tool
 extends AudioStreamPlayer
 class_name RandomSoundBite

@@ -39,7 +39,6 @@ func attachNewSection(count : int = 0) -> bool:
 	var newSection = System.getRandomSection(self)
 	System.attachSection(self, newSection, count)
 
-	# attached_position = newSection
 	newSection.on_attached(self, count)
 
 	return true

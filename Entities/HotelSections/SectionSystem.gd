@@ -1,6 +1,7 @@
 extends Node3D
 class_name SectionSystem
 
+# Singelton
 static var System : SectionSystem
 
 @export_group("Set up")
@@ -39,12 +40,14 @@ func getRandomSection(requester : TransitionSpot) -> HotelSection:
 	var sectionResource = section_library.getRandomSection(requester)
 	return sectionResource.instantiate(self)
 
+#This removes old sections that are far from the new transition point. This helps prevent both performance issues and sections potentially colliding with each other.
 func cull_sections(current_point : TransitionSpot, previous_point : TransitionSpot = null, depth : int = 0):
 	var current_section = current_point.section
 	if depth >= min_cull_depth:
 		current_section.queue_free()
 		previous_point.attached_position = null
 
+	# current_section is still valid despite queue_free, queue_free only deletes the node on the next frame
 	for point in current_section.all_points:
 		if depth > 0 && point == current_point:
 			continue
@@ -55,12 +58,11 @@ func cull_sections(current_point : TransitionSpot, previous_point : TransitionSp
 func attachSection(attachPoint : TransitionSpot, section : HotelSection, _count : int = 0):
 	num_sections += 1
 
-	# add_child(section)
-	# section.owner = self
-
+	# Not all sections have a defined entrance, in those cases we just treat one of the exits as the entrance at random.
 	var sectionPoint = section.entrance if !attachPoint.entrance else section.exit_points.pick_random()
 	var rotAngle = attachPoint.exit_rotation if !attachPoint.entrance else -sectionPoint.exit_rotation 
 
+	# This just ensures that the newly attached section is aligned properly.
 	section.position = attachPoint.global_position
 	section.align(sectionPoint, rotAngle + attachPoint.section.rotation.y)
 
@@ -70,7 +72,6 @@ func attachSection(attachPoint : TransitionSpot, section : HotelSection, _count 
 
 func hydrateSectionDoors(section : HotelSection):
 	for door in section.gameDoors:
-		print(currentGameIndex)
 		door.setGame(games_library[currentGameIndex])
 		currentGameIndex += 1
 		if currentGameIndex >= games_library.size():

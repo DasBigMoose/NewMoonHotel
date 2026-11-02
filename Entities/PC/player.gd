@@ -62,6 +62,8 @@ func _physics_process(_delta: float) -> void:
 		$BackwardRay
 	]
 
+	# This is for checking if any un-attached transition spots are potentially visible to the player. 
+	# This is to prevent any black voids that could occurr from either the cull process or a series of long hallways
 	for sightRay in sightRays:
 		if sightRay.is_colliding():
 			var collider = sightRay.get_collider()
@@ -106,9 +108,12 @@ func process_movement(action):
 		if valid_movements.get(action, false) and can_tween():
 			move_vector = move_vectors.get(action, Vector3.ZERO).rotated(Vector3(0.0, 1.0, 0.0), rotation.y)
 
+#Overlapping tweens can cause undefined behavior, make sure all tweens have finished before allowing another to start
 func can_tween() -> bool:
 	return movement_enabled && (!movement_tween or !movement_tween.is_valid()) and (!rotation_tween or !rotation_tween.is_valid())
 
+# Checks the validity of all potential movements. In hindsigh this should have been a switch case based on
+# an action string passed into the function.
 func get_valid_movements() -> Dictionary:
 	return {
 		"move_left": left_collissions.is_empty(),
@@ -117,6 +122,7 @@ func get_valid_movements() -> Dictionary:
 		"move_backward": backward_collissions.is_empty(),
 		}
 
+# These could have been condensed
 func _on_forward_area_entered(area : Area3D):
 	forward_collissions[area.get_instance_id()] = true
 

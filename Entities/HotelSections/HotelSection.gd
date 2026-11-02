@@ -43,7 +43,7 @@ func delete():
 		if point.attached_position:
 			point.attached_position.attached_position = null
 
-	#Queue free
+	# Delete self
 	queue_free()
 
 
@@ -55,6 +55,8 @@ func on_attached(_attachedSpot : TransitionSpot, count : int = 0):
 	if count < SectionSystem.System.recursionLimit:
 		count += 1
 		for spot in transition_spots:
+			# This ensures that when a new section is attached, then any transition points visible from that entrance gets a section attached.
+			# This stops the player from seeing the black void essentially.
 			if spot.visible_from_entrance:
 				spot.attachNewSection(count)
 
@@ -65,6 +67,7 @@ func load_attached_sections(count : int = 0):
 
 
 func _on_section_entered(area: Area3D) -> void:
+	# Both these sections should have been their own function and this listener should have been renamed.
 	if area.get_collision_layer_value(SPAWN_COLLISION_LAYER):
 		var otherSection = area.get_parent().get_parent()
 		if otherSection is HotelSection:

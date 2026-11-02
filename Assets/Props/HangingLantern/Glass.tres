@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://v5e1w6oq2j77"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://v5e1w6oq2j77"]
 
 [ext_resource type="Shader" uid="uid://dahjjjif78nn2" path="res://Assets/Props/HangingLantern/GlassShader.gdshader" id="1_2h48d"]
 [ext_resource type="FastNoiseLite" uid="uid://be6ro6v2oc4ix" path="res://Assets/Props/HangingLantern/GlassNoise.tres" id="2_qgibt"]

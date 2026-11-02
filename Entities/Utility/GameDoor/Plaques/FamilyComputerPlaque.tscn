@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvrbaq11lpsfl"]
+[gd_scene format=3 uid="uid://dvrbaq11lpsfl"]
 
 [ext_resource type="PackedScene" uid="uid://cowrm2b1jov3h" path="res://Entities/Utility/GameDoor/Plaques/BaseGamePlaque.tscn" id="1_soawx"]
 
-[node name="FamilyComputerGamePlaque" instance=ExtResource("1_soawx")]
+[node name="FamilyComputerGamePlaque" unique_id=346118592 instance=ExtResource("1_soawx")]
 
 [node name="Label" parent="." index="1"]
 text = "An Evening
 With the
 Family Computer"
+font_size = 66

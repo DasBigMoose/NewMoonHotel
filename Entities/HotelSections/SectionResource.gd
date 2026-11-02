@@ -18,6 +18,7 @@ func instantiate(parent : Node3D) -> HotelSection:
 
 	return section
 
+#This generates unique id's for each section scene, used to prevent sections from attaching to themselves mostly.
 func generate_ids():
 	var current_id = 1
 	var tld = "res://Entities/HotelSections/Sections/"

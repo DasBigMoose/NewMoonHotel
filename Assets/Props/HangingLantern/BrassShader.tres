@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=12 format=3 uid="uid://2dxpdl2twqrq"]
+[gd_resource type="VisualShader" format=3 uid="uid://2dxpdl2twqrq"]
 
 [ext_resource type="FastNoiseLite" uid="uid://xkxaf28045se" path="res://Assets/Props/HangingLantern/BrassNoise.tres" id="1_wym7k"]
 
@@ -48,69 +48,6 @@ constant = 0.5
 constant = 1.0
 
 [resource]
-code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_back, diffuse_lambert, specular_schlick_ggx;
-
-uniform sampler2D tex_frg_3 : source_color;
-
-
-
-void fragment() {
-// ColorConstant:6
-	vec4 n_out6p0 = vec4(0.074815, 0.086838, 0.094682, 1.000000);
-
-
-// Texture2D:3
-	vec4 n_out3p0 = texture(tex_frg_3, UV);
-
-
-	vec3 n_out4p0;
-// ColorOp:4
-	{
-		float base = vec3(n_out6p0.xyz).x;
-		float blend = vec3(n_out3p0.xyz).x;
-		if (base < 0.5) {
-			n_out4p0.x = 2.0 * base * blend;
-		} else {
-			n_out4p0.x = 1.0 - 2.0 * (1.0 - blend) * (1.0 - base);
-		}
-	}
-	{
-		float base = vec3(n_out6p0.xyz).y;
-		float blend = vec3(n_out3p0.xyz).y;
-		if (base < 0.5) {
-			n_out4p0.y = 2.0 * base * blend;
-		} else {
-			n_out4p0.y = 1.0 - 2.0 * (1.0 - blend) * (1.0 - base);
-		}
-	}
-	{
-		float base = vec3(n_out6p0.xyz).z;
-		float blend = vec3(n_out3p0.xyz).z;
-		if (base < 0.5) {
-			n_out4p0.z = 2.0 * base * blend;
-		} else {
-			n_out4p0.z = 1.0 - 2.0 * (1.0 - blend) * (1.0 - base);
-		}
-	}
-
-
-// FloatConstant:8
-	float n_out8p0 = 1.000000;
-
-
-// FloatConstant:7
-	float n_out7p0 = 0.500000;
-
-
-// Output:0
-	ALBEDO = n_out4p0;
-	METALLIC = n_out8p0;
-	ROUGHNESS = n_out7p0;
-
-
-}
-"
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_wym7k")
 nodes/fragment/2/position = Vector2(-760, 40)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_sqygj")

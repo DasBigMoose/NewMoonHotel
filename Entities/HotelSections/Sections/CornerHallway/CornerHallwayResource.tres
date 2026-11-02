@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="SectionResource" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="SectionResource" format=3 uid="uid://blyutl03s7k7t"]
 
-[ext_resource type="Script" path="res://Entities/HotelSections/SectionResource.gd" id="1_j1ebu"]
-[ext_resource type="PackedScene" path="res://Entities/HotelSections/Sections/CornerHallway/CornerHallway.tscn" id="2_v1b46"]
+[ext_resource type="Script" uid="uid://fywdp5ir4qo8" path="res://Entities/HotelSections/SectionResource.gd" id="1_j1ebu"]
+[ext_resource type="PackedScene" uid="uid://cmk4fkn4j305e" path="res://Entities/HotelSections/Sections/CornerHallway/CornerHallway.tscn" id="2_v1b46"]
 
 [resource]
 script = ExtResource("1_j1ebu")
 sectionScene = ExtResource("2_v1b46")
-ID = 5
 metadata/_custom_type_script = "uid://fywdp5ir4qo8"

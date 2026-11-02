@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=29 format=4 uid="uid://ci8p3bbg1jvjl"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://ci8p3bbg1jvjl"]
 
 [ext_resource type="Material" uid="uid://boknx037g7s38" path="res://Assets/BlockSet/Materials/RedDoor.tres" id="1_6ah6n"]
 [ext_resource type="Material" uid="uid://dgj5chj120ix3" path="res://Assets/BlockSet/Materials/DoorTrim.tres" id="2_ebltb"]

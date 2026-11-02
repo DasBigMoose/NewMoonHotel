@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=7 format=3 uid="uid://om4pdg1mpl6e"]
+[gd_resource type="VisualShader" format=3 uid="uid://om4pdg1mpl6e"]
 
 [ext_resource type="FastNoiseLite" uid="uid://be6ro6v2oc4ix" path="res://Assets/Props/HangingLantern/GlassNoise.tres" id="1_mjetv"]
 
@@ -25,33 +25,6 @@ output_port_for_preview = 0
 input_name = "screen_uv"
 
 [resource]
-code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_disabled, diffuse_lambert, specular_schlick_ggx, sss_mode_skin;
-
-uniform sampler2D tex_frg_2;
-
-
-
-void fragment() {
-// Input:8
-	vec2 n_out8p0 = SCREEN_UV;
-
-
-// Texture2D:2
-	vec4 n_out2p0 = texture(tex_frg_2, n_out8p0);
-
-
-// FloatConstant:7
-	float n_out7p0 = 0.100000;
-
-
-// Output:0
-	ALBEDO = vec3(n_out2p0.xyz);
-	ALPHA = n_out7p0;
-
-
-}
-"
 modes/cull = 2
 flags/sss_mode_skin = true
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_xpd3d")

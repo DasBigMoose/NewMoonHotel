@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dltng6c6ppt40"]
+[gd_resource type="Environment" format=3 uid="uid://dltng6c6ppt40"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a2sox"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -15,7 +15,6 @@ ambient_light_energy = 0.0
 sdfgi_min_cell_size = 20.679981
 glow_enabled = true
 glow_strength = 0.77
-glow_blend_mode = 1
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
