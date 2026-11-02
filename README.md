@@ -7,3 +7,7 @@ the game being able to be set up and left running for the duration of the showca
 
 This project was written over the course of about 4 days so a lot of sacrifices needed to be made with regards to cleanliness, but I think given the time constraint it turned out pretty clean. I'm also not 100% sure if this was the final version I had at the showcase, it was kind of a
 hectic couple days leading up to the release so I very well could have made some last minute changes the day of that I never committed.
+
+
+
+If you run into any errors around asset imports, you might need to download blender and set it up to be used with Godot. Should be able to find up steps on setting that up online easily enough!
