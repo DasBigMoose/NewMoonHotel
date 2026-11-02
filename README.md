@@ -5,7 +5,7 @@ makes the environment feel a little more claustrophobic. The spacebar *would* op
 The hotel is procedurally generated from small set pieces called Sections. The hotel itself gets built and broken down as the player moves from section to section, the idea was to make it really easy to for players to feel like they're lost. Also had the bonus effect of 
 the game being able to be set up and left running for the duration of the showcase without the need for restarting.
 
-This project was written over the course of about 4 days so a lot of sacrifices needed to be made with regards to cleanliness, but I think given the time constraint it turned out pretty clean. I'm also not 100% sure if this was the final version I had at the showcase, it was kind of a
+This project was written over the course of about 4 days (including all asset work) so a lot of sacrifices needed to be made with regards to cleanliness, but I think given the time constraint it turned out pretty clean. I'm also not 100% sure if this was the final version I had at the showcase, it was kind of a
 hectic couple days leading up to the release so I very well could have made some last minute changes the day of that I never committed.
 
 
